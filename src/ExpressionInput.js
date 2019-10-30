@@ -11,7 +11,7 @@ const ExpressionInput = ({ width }) => {
   const [editor, setEditor] = useState(false);
   const [containerHeight, setContainerHeight] = useState(20);
   const [maximiseEditor, setMaximiseEditor] = useState(false);
-  const onEditorDidMount = editor => {
+  const onEditorDidMount = (editor, monaco) => {
     editor.onDidFocusEditorWidget(function() {
       setEditor(true);
       setContainerHeight(100);
@@ -22,6 +22,17 @@ const ExpressionInput = ({ width }) => {
       setContainerHeight(20);
       editor.layout();
     });
+
+    // monaco.languages.registerCompletionItemProvider('javascript', {
+    //   provideCompletionItems: (model, position) => {
+    //     const suggestions = [];
+    //     // add completion items
+    //     return {
+    //       suggestions,
+    //     };
+    //   },
+    //   triggerCharacters: ['.'],
+    // });
   };
   const handleChangeValue = value => setContent(value);
   return (
