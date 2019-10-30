@@ -1,0 +1,10 @@
+.App {
+  font-family: sans-serif;
+  display: flex;
+  height: 40px;
+}
+
+.mask {
+  z-index: 50;
+  background: rgba(211, 211, 211, 0.5);
+}
